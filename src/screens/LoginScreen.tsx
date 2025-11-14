@@ -44,8 +44,8 @@ export default function LoginScreen() {
         <Text style={[styles.title, { color: textColor }]}>SoundSync</Text>
 
         <View style={styles.leftAligned}>
-          <Text style={[styles.heading, { color: textColor, marginTop: 24 }]}>Get Started</Text>
-          <Text style={[styles.label, { color: textColor }]}>Your Name</Text>
+        <Text style={[styles.heading, { color: textColor }]}>Get Started</Text>
+        <Text style={[styles.label, { color: textColor }]}>Your Name</Text>
           <TextInput
             style={[styles.input, { color: textColor, borderColor: textColor }]}
             placeholder="Enter your name"
@@ -61,29 +61,29 @@ export default function LoginScreen() {
           </TouchableOpacity>
         </View>
 
-        <View style={{ marginTop: 32, width: '80%' }}>
+        <View style={styles.connectButtonsContainer}>
           <TouchableOpacity
             style={[styles.connectButton, { backgroundColor: spotifyColor }]}
             onPress={() => console.log('Connecting to Spotify')}
           >
             <Text style={styles.connectButtonText}>Connect to Spotify</Text>
-            <ChevronRight color="#FFF" size={24} style={{ marginLeft: 8 }} />
+            <ChevronRight color="#FFF" size={24} style={styles.chevron} />
           </TouchableOpacity>
 
           <TouchableOpacity
-            style={[styles.connectButton, { backgroundColor: soundcloudColor, marginTop: 12 }]}
+            style={[styles.connectButton, { backgroundColor: soundcloudColor }, styles.mt12]}
             onPress={() => console.log('Connecting to SoundCloud')}
           >
             <Text style={styles.connectButtonText}>Connect to SoundCloud</Text>
-            <ChevronRight color="#FFF" size={24} style={{ marginLeft: 8 }} />
+            <ChevronRight color="#FFF" size={24} style={styles.chevron} />
           </TouchableOpacity>
 
           <TouchableOpacity
-            style={[styles.connectButton, { backgroundColor: appleMusicColor, marginTop: 12 }]}
+            style={[styles.connectButton, { backgroundColor: appleMusicColor }, styles.mt12]}
             onPress={() => console.log('Connecting to Apple Music')}
           >
             <Text style={styles.connectButtonText}>Connect to Apple Music</Text>
-            <ChevronRight color="#FFF" size={24} style={{ marginLeft: 8 }} />
+            <ChevronRight color="#FFF" size={24} style={styles.chevron} />
           </TouchableOpacity>
         </View>
       </View>
@@ -95,19 +95,18 @@ const styles = StyleSheet.create({
   canvas: { flex: 1, justifyContent: 'center', alignItems: 'center', padding: 12 },
   centered: { width: '100%', alignItems: 'center' },
   leftAligned: { width: '80%', alignItems: 'flex-start' },
-  title: { fontSize: 40, fontWeight: 'bold', textAlign: 'center', padding: 12, fontFamily: 'Raleway-Black' },
-  heading: { fontSize: 20, fontWeight: 'bold', marginBottom: 8, fontFamily: 'Raleway-Bold' },
-  label: { marginBottom: 4, fontFamily: 'Raleway-Regular' },
+  title: { fontSize: 40, fontWeight: 'bold', textAlign: 'center', padding: 12, },
+  heading: { fontSize: 20, fontWeight: 'bold', marginTop: 24, marginBottom: 8, },
+  label: { marginBottom: 4, },
   input: {
     width: '100%',
     backgroundColor: '#00000010',
     padding: 12,
     borderRadius: 12,
     borderWidth: 1,
-    fontFamily: 'Raleway-Regular',
   },
   saveButton: { padding: 12, borderRadius: 12, marginTop: 8, alignItems: 'center' },
-  saveButtonText: { fontWeight: 'bold', fontFamily: 'Raleway-Bold' },
+  saveButtonText: { fontWeight: 'bold', },
   connectButton: {
     flexDirection: 'row',
     padding: 12,
@@ -115,5 +114,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  connectButtonText: { color: '#FFF', fontWeight: '600', fontFamily: 'Raleway-Bold', marginRight: 8 },
+  connectButtonText: { color: '#FFF', fontWeight: '600', marginRight: 8 },
+  connectButtonsContainer: { marginTop: 32, width: '80%' },
+  mt12: { marginTop: 12 },
+  chevron: { marginLeft: 8 },
 });
